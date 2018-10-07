@@ -1,7 +1,12 @@
 <div id="container">
-  <textarea id="write" rows="6" cols="60"></textarea>
+  <textarea 
+    [(ngModel)]="text" 
+    (ngModelChange)="calcMap()"
+    id="write" rows="6" cols="60">
+  </textarea>
 
-  <br><br>
+  {{ altText }}
+  <!-- <br><br>
   <h2>QWERTY</h2>
   <ul id="keyboard">
     <li class="symbol"><span class="off">|</span><span class="on">°</span></li>
@@ -179,6 +184,6 @@
     <li class="symbol"><span class="off">-</span><span class="on">_</span></li>
     <li class="right-shift lastitem">Shift</li>
     <li class="space lastitem">&nbsp;</li>
-  </ul>
+  </ul> -->
 
 </div>

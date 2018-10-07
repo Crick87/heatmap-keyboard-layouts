@@ -1,1 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+ * {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ body {
+     font: 71%/1.5 Verdana, Sans-Serif;
+     background: #eee;
+ }
+ 
+ #container {
+     margin: 100px auto;
+     width: 688px;
+ }
+ 
+ #write {
+     margin: 0 0 5px;
+     padding: 5px;
+     width: 671px;
+     height: 200px;
+     font: 1em/1.5 Verdana, Sans-Serif;
+     background: #fff;
+     border: 1px solid #f9f9f9;
+     -moz-border-radius: 5px;
+     -webkit-border-radius: 5px;
+ }
+ 
+ #keyboard {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+ }
+ 
+ #keyboard li {
+     float: left;
+     margin: 0 5px 5px 0;
+     width: 40px;
+     height: 40px;
+     line-height: 40px;
+     text-align: center;
+     background: #fff;
+     border: 1px solid #f9f9f9;
+     -moz-border-radius: 5px;
+     -webkit-border-radius: 5px;
+ }
+ 
+ .capslock,
+ .tab,
+ .left-shift {
+     clear: left;
+ }
+ 
+ #keyboard .delete {
+     width: 70px;
+ }
+
+ #keyboard .tab {
+     width: 60px;
+ }
+ 
+ #keyboard .capslock {
+     width: 70px;
+ }
+ 
+ #keyboard .return1 {
+    width: 50px;
+}
+
+#keyboard .return2 {
+     width: 40px;
+ }
+ 
+ #keyboard .left-shift {
+     width: 95px;
+ }
+ 
+ #keyboard .right-shift {
+     width: 109px;
+ }
+ 
+ .lastitem {
+     margin-right: 0;
+ }
+ 
+ .uppercase {
+     text-transform: uppercase;
+ }
+ 
+ #keyboard .space {
+     clear: left;
+     width: 681px;
+ }
+ 
+ .on {
+     display: none;
+ }
+ 
+ #keyboard li:hover {
+     position: relative;
+     top: 1px;
+     left: 1px;
+     border-color: #e5e5e5;
+     cursor: pointer;
+ }

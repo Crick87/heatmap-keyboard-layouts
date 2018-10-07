@@ -23,6 +23,24 @@ export class AppComponent {
            {l: 'x', t: 0, p: 0}, {l: 'y', t: 0, p: 0}, {l: 'z', t: 0, p: 0},
            {l: ',', t: 0, p: 0}, {l: '.', t: 0, p: 0}, {l: '-', t: 0, p: 0}];
 
+  keyboards = [
+    {
+      name: 'qwerty',
+      keys: ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G',
+            'H', 'J', 'K', 'L', 'Ñ', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '-']
+    },
+    {
+      name: 'dvorak',
+      keys: ['.', ',', 'Ñ', 'P', 'Y', 'F', 'G', 'C', 'H', 'L', 'A', 'O', 'E', 'U', 'I',
+            'D', 'R', 'T', 'N', 'S', '-', 'Q', 'J', 'K', 'X', 'B', 'M', 'W', 'V', 'Z']
+    },
+    {
+      name: 'colemak',
+      keys: ['Q', 'W', 'F', 'P', 'G', 'J', 'L', 'U', 'Y', 'Ñ', 'A', 'R', 'S', 'T', 'D',
+             'H', 'N', 'E', 'I', 'O', 'Z', 'X', 'C', 'V', 'B', 'K', 'M', ',', '.', '-']
+    }
+  ];
+
   calcMap() {
     this.altText = this.normalize(this.text);
     this.count();

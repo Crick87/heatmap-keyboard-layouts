@@ -1,12 +1,13 @@
 <div id="container">
+
+  <h1>Mapa de calor para distribuciones de teclado</h1>
   <textarea 
     [(ngModel)]="text" 
     (ngModelChange)="calcMap()"
     id="write" rows="6" cols="60">
   </textarea>
 
-  {{ altText }}
-  <!-- <br><br>
+  <br><br>
   <h2>QWERTY</h2>
   <ul id="keyboard">
     <li class="symbol"><span class="off">|</span><span class="on">°</span></li>
@@ -24,44 +25,44 @@
     <li class="symbol"><span class="off">¿</span><span class="on">¡</span></li>
     <li class="delete lastitem">Borrar</li>
     <li class="tab">Tab</li>
-    <li class="letter">Q</li>
-    <li class="letter">W</li>
-    <li class="letter">E</li>
-    <li class="letter">R</li>
-    <li class="letter">T</li>
-    <li class="letter">Y</li>
-    <li class="letter">U</li>
-    <li class="letter">I</li>
-    <li class="letter">O</li>
-    <li class="letter">P</li>
+    <li class="letter" [ngStyle]="{'background': getColor('Q')}">Q</li>
+    <li class="letter" [ngStyle]="{'background': getColor('W')}">W</li>
+    <li class="letter" [ngStyle]="{'background': getColor('E')}">E</li>
+    <li class="letter" [ngStyle]="{'background': getColor('R')}">R</li>
+    <li class="letter" [ngStyle]="{'background': getColor('T')}">T</li>
+    <li class="letter" [ngStyle]="{'background': getColor('Y')}">Y</li>
+    <li class="letter" [ngStyle]="{'background': getColor('U')}">U</li>
+    <li class="letter" [ngStyle]="{'background': getColor('I')}">I</li>
+    <li class="letter" [ngStyle]="{'background': getColor('O')}">O</li>
+    <li class="letter" [ngStyle]="{'background': getColor('P')}">P</li>
     <li class="symbol"><span class="off">´</span><span class="on">¨</span></li>
     <li class="symbol"><span class="off">+</span><span class="on">*</span></li>
     <li class="return1 lastitem">Enter</li>
     <li class="capslock">B. Mayús</li>
-    <li class="letter">A</li>
-    <li class="letter">S</li>
-    <li class="letter">D</li>
-    <li class="letter">F</li>
-    <li class="letter">G</li>
-    <li class="letter">H</li>
-    <li class="letter">J</li>
-    <li class="letter">K</li>
-    <li class="letter">L</li>
-    <li class="letter">Ñ</li>
+    <li class="letter" [ngStyle]="{'background': getColor('A')}">A</li>
+    <li class="letter" [ngStyle]="{'background': getColor('S')}">S</li>
+    <li class="letter" [ngStyle]="{'background': getColor('D')}">D</li>
+    <li class="letter" [ngStyle]="{'background': getColor('F')}">F</li>
+    <li class="letter" [ngStyle]="{'background': getColor('G')}">G</li>
+    <li class="letter" [ngStyle]="{'background': getColor('H')}">H</li>
+    <li class="letter" [ngStyle]="{'background': getColor('J')}">J</li>
+    <li class="letter" [ngStyle]="{'background': getColor('K')}">K</li>
+    <li class="letter" [ngStyle]="{'background': getColor('L')}">L</li>
+    <li class="letter" [ngStyle]="{'background': getColor('Ñ')}">Ñ</li>
     <li class="symbol"><span class="off">{{'{'}}</span><span class="on">[</span></li>
     <li class="symbol"><span class="off">{{'}'}}</span><span class="on">]</span></li>
     <li class="return2 lastitem"></li>
     <li class="left-shift">Shift</li>
-    <li class="letter">Z</li>
-    <li class="letter">X</li>
-    <li class="letter">C</li>
-    <li class="letter">V</li>
-    <li class="letter">B</li>
-    <li class="letter">N</li>
-    <li class="letter">M</li>
-    <li class="symbol"><span class="off">,</span><span class="on">;</span></li>
-    <li class="symbol"><span class="off">.</span><span class="on">:</span></li>
-    <li class="symbol"><span class="off">-</span><span class="on">_</span></li>
+    <li class="letter" [ngStyle]="{'background': getColor('Z')}">Z</li>
+    <li class="letter" [ngStyle]="{'background': getColor('X')}">X</li>
+    <li class="letter" [ngStyle]="{'background': getColor('C')}">C</li>
+    <li class="letter" [ngStyle]="{'background': getColor('V')}">V</li>
+    <li class="letter" [ngStyle]="{'background': getColor('B')}">B</li>
+    <li class="letter" [ngStyle]="{'background': getColor('N')}">N</li>
+    <li class="letter" [ngStyle]="{'background': getColor('M')}">M</li>
+    <li class="symbol" [ngStyle]="{'background': getColor(',')}"><span class="off">,</span><span class="on">;</span></li>
+    <li class="symbol" [ngStyle]="{'background': getColor('.')}"><span class="off">.</span><span class="on">:</span></li>
+    <li class="symbol" [ngStyle]="{'background': getColor('-')}"><span class="off">-</span><span class="on">_</span></li>
     <li class="right-shift lastitem">Shift</li>
     <li class="space lastitem">&nbsp;</li>
   </ul>
@@ -84,44 +85,44 @@
     <li class="symbol"><span class="off">¿</span><span class="on">¡</span></li>
     <li class="delete lastitem">Borrar</li>
     <li class="tab">Tab</li>
-    <li class="symbol"><span class="off">.</span><span class="on">:</span></li>
-    <li class="symbol"><span class="off">,</span><span class="on">;</span></li>
-    <li class="letter">Ñ</li>
-    <li class="letter">P</li>
-    <li class="letter">Y</li>
-    <li class="letter">F</li>
-    <li class="letter">G</li>
-    <li class="letter">C</li>
-    <li class="letter">H</li>
-    <li class="letter">L</li>
+    <li class="symbol" [ngStyle]="{'background': getColor('.')}"><span class="off">.</span><span class="on">:</span></li>
+    <li class="symbol" [ngStyle]="{'background': getColor(',')}"><span class="off">,</span><span class="on">;</span></li>
+    <li class="letter" [ngStyle]="{'background': getColor('Ñ')}">Ñ</li>
+    <li class="letter" [ngStyle]="{'background': getColor('P')}">P</li>
+    <li class="letter" [ngStyle]="{'background': getColor('Y')}">Y</li>
+    <li class="letter" [ngStyle]="{'background': getColor('F')}">F</li>
+    <li class="letter" [ngStyle]="{'background': getColor('G')}">G</li>
+    <li class="letter" [ngStyle]="{'background': getColor('C')}">C</li>
+    <li class="letter" [ngStyle]="{'background': getColor('H')}">H</li>
+    <li class="letter" [ngStyle]="{'background': getColor('L')}">L</li>
     <li class="symbol"><span class="off">´</span><span class="on">¨</span></li>
     <li class="symbol"><span class="off">+</span><span class="on">*</span></li>
     <li class="return1 lastitem">Enter</li>
     <li class="capslock">B. Mayús</li>
-    <li class="letter">A</li>
-    <li class="letter">O</li>
-    <li class="letter">E</li>
-    <li class="letter">U</li>
-    <li class="letter">I</li>
-    <li class="letter">D</li>
-    <li class="letter">R</li>
-    <li class="letter">T</li>
-    <li class="letter">N</li>
-    <li class="letter">S</li>
+    <li class="letter" [ngStyle]="{'background': getColor('A')}">A</li>
+    <li class="letter" [ngStyle]="{'background': getColor('O')}">O</li>
+    <li class="letter" [ngStyle]="{'background': getColor('E')}">E</li>
+    <li class="letter" [ngStyle]="{'background': getColor('U')}">U</li>
+    <li class="letter" [ngStyle]="{'background': getColor('I')}">I</li>
+    <li class="letter" [ngStyle]="{'background': getColor('D')}">D</li>
+    <li class="letter" [ngStyle]="{'background': getColor('R')}">R</li>
+    <li class="letter" [ngStyle]="{'background': getColor('T')}">T</li>
+    <li class="letter" [ngStyle]="{'background': getColor('N')}">N</li>
+    <li class="letter" [ngStyle]="{'background': getColor('S')}">S</li>
     <li class="symbol"><span class="off">{{'{'}}</span><span class="on">[</span></li>
     <li class="symbol"><span class="off">{{'}'}}</span><span class="on">]</span></li>
     <li class="return2 lastitem"></li>
     <li class="left-shift">Shift</li>
-    <li class="symbol"><span class="off">-</span><span class="on">_</span></li>
-    <li class="letter">Q</li>
-    <li class="letter">J</li>
-    <li class="letter">K</li>
-    <li class="letter">X</li>
-    <li class="letter">B</li>
-    <li class="letter">M</li>
-    <li class="letter">W</li>
-    <li class="letter">V</li>
-    <li class="letter">Z</li>
+    <li class="symbol" [ngStyle]="{'background': getColor('-')}"><span class="off">-</span><span class="on">_</span></li>
+    <li class="letter" [ngStyle]="{'background': getColor('Q')}">Q</li>
+    <li class="letter" [ngStyle]="{'background': getColor('J')}">J</li>
+    <li class="letter" [ngStyle]="{'background': getColor('K')}">K</li>
+    <li class="letter" [ngStyle]="{'background': getColor('X')}">X</li>
+    <li class="letter" [ngStyle]="{'background': getColor('B')}">B</li>
+    <li class="letter" [ngStyle]="{'background': getColor('M')}">M</li>
+    <li class="letter" [ngStyle]="{'background': getColor('W')}">W</li>
+    <li class="letter" [ngStyle]="{'background': getColor('V')}">V</li>
+    <li class="letter" [ngStyle]="{'background': getColor('Z')}">Z</li>
     <li class="right-shift lastitem">Shift</li>
     <li class="space lastitem">&nbsp;</li>
   </ul>
@@ -144,46 +145,46 @@
     <li class="symbol"><span class="off">¿</span><span class="on">¡</span></li>
     <li class="delete lastitem">Borrar</li>
     <li class="tab">Tab</li>
-    <li class="letter">Q</li>
-    <li class="letter">W</li>
-    <li class="letter">F</li>
-    <li class="letter">P</li>
-    <li class="letter">G</li>
-    <li class="letter">J</li>
-    <li class="letter">L</li>
-    <li class="letter">U</li>
-    <li class="letter">Y</li>
-    <li class="letter">Ñ</li>
+    <li class="letter" [ngStyle]="{'background': getColor('Q')}">Q</li>
+    <li class="letter" [ngStyle]="{'background': getColor('W')}">W</li>
+    <li class="letter" [ngStyle]="{'background': getColor('F')}">F</li>
+    <li class="letter" [ngStyle]="{'background': getColor('P')}">P</li>
+    <li class="letter" [ngStyle]="{'background': getColor('G')}">G</li>
+    <li class="letter" [ngStyle]="{'background': getColor('J')}">J</li>
+    <li class="letter" [ngStyle]="{'background': getColor('L')}">L</li>
+    <li class="letter" [ngStyle]="{'background': getColor('U')}">U</li>
+    <li class="letter" [ngStyle]="{'background': getColor('Y')}">Y</li>
+    <li class="letter" [ngStyle]="{'background': getColor('Ñ')}">Ñ</li>
     <li class="symbol"><span class="off">´</span><span class="on">¨</span></li>
     <li class="symbol"><span class="off">+</span><span class="on">*</span></li>
     <li class="return1 lastitem">Enter</li>
     <li class="capslock">B. Mayús</li>
-    <li class="letter">A</li>
-    <li class="letter">R</li>
-    <li class="letter">S</li>
-    <li class="letter">T</li>
-    <li class="letter">D</li>
-    <li class="letter">H</li>
-    <li class="letter">N</li>
-    <li class="letter">E</li>
-    <li class="letter">I</li>
-    <li class="letter">O</li>
+    <li class="letter" [ngStyle]="{'background': getColor('A')}">A</li>
+    <li class="letter" [ngStyle]="{'background': getColor('R')}">R</li>
+    <li class="letter" [ngStyle]="{'background': getColor('S')}">S</li>
+    <li class="letter" [ngStyle]="{'background': getColor('T')}">T</li>
+    <li class="letter" [ngStyle]="{'background': getColor('D')}">D</li>
+    <li class="letter" [ngStyle]="{'background': getColor('H')}">H</li>
+    <li class="letter" [ngStyle]="{'background': getColor('N')}">N</li>
+    <li class="letter" [ngStyle]="{'background': getColor('E')}">E</li>
+    <li class="letter" [ngStyle]="{'background': getColor('I')}">I</li>
+    <li class="letter" [ngStyle]="{'background': getColor('O')}">O</li>
     <li class="symbol"><span class="off">{{'{'}}</span><span class="on">[</span></li>
     <li class="symbol"><span class="off">{{'}'}}</span><span class="on">]</span></li>
     <li class="return2 lastitem"></li>
     <li class="left-shift">Shift</li>
-    <li class="letter">Z</li>
-    <li class="letter">X</li>
-    <li class="letter">C</li>
-    <li class="letter">V</li>
-    <li class="letter">B</li>
-    <li class="letter">K</li>
-    <li class="letter">M</li>
-    <li class="symbol"><span class="off">,</span><span class="on">;</span></li>
-    <li class="symbol"><span class="off">.</span><span class="on">:</span></li>
-    <li class="symbol"><span class="off">-</span><span class="on">_</span></li>
+    <li class="letter" [ngStyle]="{'background': getColor('Z')}">Z</li>
+    <li class="letter" [ngStyle]="{'background': getColor('X')}">X</li>
+    <li class="letter" [ngStyle]="{'background': getColor('C')}">C</li>
+    <li class="letter" [ngStyle]="{'background': getColor('V')}">V</li>
+    <li class="letter" [ngStyle]="{'background': getColor('B')}">B</li>
+    <li class="letter" [ngStyle]="{'background': getColor('K')}">K</li>
+    <li class="letter" [ngStyle]="{'background': getColor('M')}">M</li>
+    <li class="symbol" [ngStyle]="{'background': getColor(',')}"><span class="off">,</span><span class="on">;</span></li>
+    <li class="symbol" [ngStyle]="{'background': getColor('.')}"><span class="off">.</span><span class="on">:</span></li>
+    <li class="symbol" [ngStyle]="{'background': getColor('-')}"><span class="off">-</span><span class="on">_</span></li>
     <li class="right-shift lastitem">Shift</li>
     <li class="space lastitem">&nbsp;</li>
-  </ul> -->
+  </ul>
 
 </div>

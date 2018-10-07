@@ -18,15 +18,15 @@ export class AppComponent {
            {l: 'j', t: 0, p: 0}, {l: 'k', t: 0, p: 0}, {l: 'l', t: 0, p: 0},
            {l: 'm', t: 0, p: 0}, {l: 'n', t: 0, p: 0}, {l: 'ñ', t: 0, p: 0},
            {l: 'o', t: 0, p: 0}, {l: 'p', t: 0, p: 0}, {l: 'q', t: 0, p: 0},
-           {l: 'r', t: 0, p: 0}, {l: 's', t: 0, p: 0}, {l: 'u', t: 0, p: 0},
-           {l: 'v', t: 0, p: 0}, {l: 'w', t: 0, p: 0}, {l: 'x', t: 0, p: 0},
-           {l: 'y', t: 0, p: 0}, {l: 'z', t: 0, p: 0}];
+           {l: 'r', t: 0, p: 0}, {l: 's', t: 0, p: 0}, {l: 't', t: 0, p: 0},
+           {l: 'u', t: 0, p: 0}, {l: 'v', t: 0, p: 0}, {l: 'w', t: 0, p: 0},
+           {l: 'x', t: 0, p: 0}, {l: 'y', t: 0, p: 0}, {l: 'z', t: 0, p: 0},
+           {l: ',', t: 0, p: 0}, {l: '.', t: 0, p: 0}, {l: '-', t: 0, p: 0}];
 
   calcMap() {
     this.altText = this.normalize(this.text);
     this.count();
     this.calcPercent();
-    console.log(this.chars);
   }
 
   normalize(s) {
@@ -66,6 +66,17 @@ export class AppComponent {
     this.chars.forEach(char => {
       char.p = char.t * 100 / max;
     });
+  }
+
+  getColor( letter ) {
+    const pos = this.chars.map(function(e) { return e.l; }).indexOf(letter.toLowerCase());
+    const percent = this.chars[pos].p;
+    return this.shadeColor('#f44336', (100 - (percent || 0)) / 100 );
+  }
+
+  shadeColor(color, percent) {
+    var f=parseInt(color.slice(1),16),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=f>>16,G=f>>8&0x00FF,B=f&0x0000FF;
+    return "#"+(0x1000000+(Math.round((t-R)*p)+R)*0x10000+(Math.round((t-G)*p)+G)*0x100+(Math.round((t-B)*p)+B)).toString(16).slice(1);
   }
 
 }

@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  // Mode
+  ortholinear = false;
   // Input text
   text = '';
   // Normalized text
@@ -38,7 +40,27 @@ export class AppComponent {
       name: 'colemak',
       keys: ['Q', 'W', 'F', 'P', 'G', 'J', 'L', 'U', 'Y', 'Ñ', 'A', 'R', 'S', 'T', 'D',
              'H', 'N', 'E', 'I', 'O', 'Z', 'X', 'C', 'V', 'B', 'K', 'M', ',', '.', '-']
-    }
+    },
+    {
+      name: 'colemak dh iso',
+      keys: ['Q', 'W', 'F', 'P', 'B', 'J', 'L', 'U', 'Y', 'Ñ', 'A', 'R', 'S', 'T', 'G',
+             'M', 'N', 'E', 'I', 'O', 'Z', 'X', 'C', 'D', 'V', 'K', 'H', ',', '.', '-']
+    },
+    {
+      name: 'colemak dh ansi',
+      keys: ['Q', 'W', 'F', 'P', 'B', 'J', 'L', 'U', 'Y', 'Ñ', 'A', 'R', 'S', 'T', 'G',
+             'M', 'N', 'E', 'I', 'O', 'X', 'C', 'D', 'V', 'Z', 'K', 'H', ',', '.', '-']
+    },
+    {
+      name: 'workman',
+      keys: ['Q', 'D', 'R', 'W', 'B', 'J', 'F', 'U', 'P', 'Ñ', 'A', 'S', 'H', 'T', 'G',
+             'Y', 'N', 'E', 'O', 'I', 'Z', 'X', 'M', 'C', 'V', 'K', 'L', ',', '.', '-']
+    },
+    {
+      name: 'norman',
+      keys: ['Q', 'W', 'D', 'F', 'K', 'J', 'U', 'R', 'L', 'Ñ', 'A', 'S', 'E', 'T', 'G',
+             'Y', 'N', 'I', 'O', 'H', 'Z', 'X', 'C', 'V', 'B', 'P', 'M', ',', '.', '-']
+    },
   ];
 
   calcMap() {

@@ -2,19 +2,19 @@
      margin: 0;
      padding: 0;
  }
- 
+
  body {
      font: 71%/1.5 Verdana, Sans-Serif;
      background: #eee;
  }
- 
+
  #container {
      margin: 100px auto;
      margin-top: 30px;
      margin-bottom: 100px !important;
      width: 688px;
  }
- 
+
  #write {
      margin: 0 0 5px;
      padding: 5px;
@@ -26,13 +26,13 @@
      -moz-border-radius: 5px;
      -webkit-border-radius: 5px;
  }
- 
+
  #keyboard {
      margin: 0;
      padding: 0;
      list-style: none;
  }
- 
+
  #keyboard li {
      float: left;
      margin: 0 5px 5px 0;
@@ -46,25 +46,27 @@
      -moz-border-radius: 5px;
      -webkit-border-radius: 5px;
  }
- 
+
  .capslock,
  .tab,
  .left-shift {
      clear: left;
  }
- 
+
  #keyboard .delete {
      width: 70px;
  }
 
+ #keyboard .start-ortho,
  #keyboard .tab {
      width: 60px;
  }
- 
+
  #keyboard .capslock {
      width: 70px;
  }
- 
+
+ #keyboard .final-ortho,
  #keyboard .return1 {
     width: 50px;
 }
@@ -72,28 +74,32 @@
 #keyboard .return2 {
      width: 40px;
  }
- 
+
  #keyboard .left-shift {
      width: 95px;
  }
- 
+
  #keyboard .right-shift {
      width: 109px;
  }
- 
+
+ #keyboard .right-shift-ortho {
+     width: 85px;
+ }
+
  .lastitem {
      margin-right: 0;
  }
- 
+
  .uppercase {
      text-transform: uppercase;
  }
- 
+
  #keyboard .space {
      clear: left;
      width: 681px;
  }
- 
+
  #keyboard li:hover {
      position: relative;
      top: 1px;

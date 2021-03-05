@@ -1,33 +1,61 @@
 <div id="container">
 
   <h1>Mapa de calor para distribuciones de teclado</h1>
-  <textarea 
-    [(ngModel)]="text" 
+  <textarea
+    [(ngModel)]="text"
     (ngModelChange)="calcMap()"
     id="write" rows="6" cols="60">
   </textarea>
 
+  <button (click)="ortholinear = !ortholinear" type="button" class="btn btn-primary my-4" data-toggle="button" aria-pressed="false" autocomplete="off">Ortholinear</button>
+
   <br><br>
-  <ng-template ngFor let-keyboard [ngForOf]="keyboards">
-    <h2>{{ keyboard.name | uppercase }}</h2>
-    <ul id="keyboard">
-      <li>|</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
-      <li>7</li><li>8</li><li>9</li><li>0</li><li>'</li><li>¿</li>
-      <li class="delete lastitem">Borrar</li><li class="tab">Tab</li>
-      <ng-template ngFor let-key [ngForOf]="keyboard.keys" let-i="index">
-        <li class="letter" [ngStyle]="{'background': getColor(key)}">{{key}}</li>
-        <li *ngIf="i === 9">´</li>
-        <li *ngIf="i === 9">+</li>
-        <li *ngIf="i === 9" class="return1 lastitem">Enter</li>
-        <li *ngIf="i === 9" class="capslock">B. Mayús</li>
-        <li *ngIf="i === 19">{{'{'}}</li>
-        <li *ngIf="i === 19">{{'}'}}</li>
-        <li *ngIf="i === 19" class="return2 lastitem"></li>
-        <li *ngIf="i === 19" class="left-shift">Shift</li>
-      </ng-template>
-      <li class="right-shift lastitem">Shift</li>
-      <li class="space lastitem">&nbsp;</li>
-    </ul>
-  </ng-template>
+  <div *ngIf="!ortholinear">
+    <ng-template ngFor let-keyboard [ngForOf]="keyboards">
+      <h2>{{ keyboard.name | uppercase }}</h2>
+      <ul id="keyboard">
+        <li>|</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li><li>0</li><li>'</li><li>¿</li>
+        <li class="delete lastitem">Borrar</li><li class="tab">Tab</li>
+        <ng-template ngFor let-key [ngForOf]="keyboard.keys" let-i="index">
+          <li class="letter" [ngStyle]="{'background': getColor(key)}">{{key}}</li>
+          <li *ngIf="i === 9">´</li>
+          <li *ngIf="i === 9">+</li>
+          <li *ngIf="i === 9" class="return1 lastitem">Enter</li>
+          <li *ngIf="i === 9" class="capslock">B. Mayús</li>
+          <li *ngIf="i === 19">{{'{'}}</li>
+          <li *ngIf="i === 19">{{'}'}}</li>
+          <li *ngIf="i === 19" class="return2 lastitem"></li>
+          <li *ngIf="i === 19" class="left-shift">Shift</li>
+        </ng-template>
+        <li class="right-shift lastitem">Shift</li>
+        <li class="space lastitem">&nbsp;</li>
+      </ul>
+    </ng-template>
+  </div>
+
+  <div *ngIf="ortholinear">
+    <ng-template ngFor let-keyboard [ngForOf]="keyboards">
+      <h2>{{ keyboard.name | uppercase }}</h2>
+      <ul id="keyboard">
+        <li class="start-ortho">|</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li><li>0</li><li>'</li><li>¿</li>
+        <li class="final-ortho lastitem">Borrar</li><li class="start-ortho">Tab</li>
+        <ng-template ngFor let-key [ngForOf]="keyboard.keys" let-i="index">
+          <li class="letter" [ngStyle]="{'background': getColor(key)}">{{key}}</li>
+          <li *ngIf="i === 9">´</li>
+          <li *ngIf="i === 9">+</li>
+          <li *ngIf="i === 9" class="final-ortho lastitem">Enter</li>
+          <li *ngIf="i === 9" class="start-ortho">Mayús</li>
+          <li *ngIf="i === 19">{{'{'}}</li>
+          <li *ngIf="i === 19">{{'}'}}</li>
+          <li *ngIf="i === 19" class="final-ortho lastitem"></li>
+          <li *ngIf="i === 19" class="start-ortho">Shift</li>
+        </ng-template>
+        <li class="right-shift-ortho lastitem">Shift</li><li class="final-ortho"></li>
+        <li class="space lastitem">&nbsp;</li>
+      </ul>
+    </ng-template>
+  </div>
 
 </div>
